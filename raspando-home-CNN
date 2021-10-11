@@ -1,0 +1,46 @@
+Neste código, busco todas as notícias da home da CNN e seleciono apenas as que aparecem com autora "Layane Serrano":
+
+
+**RASPANDO LINKS DA PÁGINA HOME DA CNN BRASIL:**
+
+import requests #permite fazer dowlouds de página da web
+from bs4 import BeautifulSoup as bs
+
+# capturando o html da home da CNN Brasil
+url = 'https://www.cnnbrasil.com.br'
+resposta = requests.get(url) #ela recebe o link da página aonde vou baixar a informação
+html = resposta.text
+
+# raspando links com o BeautifulSoup
+soup = bs(resposta.text, 'html.parser') # carregando o html no BeautifulSoup
+tags_de_links = soup.find_all('a', {'class': 'home__post'}) # examinando o html, percebemos que os links para notícias da home tem class="home__post"
+links = [] #lista vazia para guardar os links
+for tag in tags_de_links:
+  link = tag.attrs["href"] # aqui pegamos o atributo href de cada tag a, q é onde está a url do link
+  links.append(link) # guardamos a url na lista
+
+links
+
+
+**PARA EXPORTAR OS LINKS PARA EXCEL, PODEMOS USAR O PANDAS:**
+
+import pandas as pd
+arquivo_home = pd.DataFrame(links) 
+arquivo_home.to_excel('materias.xlsx', index=False)
+
+
+
+**FILTRANDO MATÉRIAS PRODUZIDAS POR LAYANE SERRANO NA HOME DA CNN BRASIL**
+
+# agora visitamos cada link e procuramos pela string "Layane Serrano"
+links_layane = [] # lista vazia para guardar o resultado
+for link in links: # acessamos cada link da lista gerada anteriormente
+  resposta = requests.get(link)
+  html = resposta.text # pegamos o html 
+  if 'Layane Serrano' in html: # verificamos se "Layane Serrano" está no html
+    links_layane.append(link) # se estiver, guardamos na lista
+
+links_layane
+
+
+
