@@ -1,4 +1,4 @@
-# MATÉRIAS NA CNN:
+# MATÉRIAS NA CNN - ATUALIZANDO PORTFÓLIO:
 Esse repositório contém 2 projetos: um que raspa a **home** da CNN Brasil + outro código que busca todas as matérias que foram produzidas por mim para o site da CNN. 
 
 **Sobre o projeto que raspa a HOME:**
