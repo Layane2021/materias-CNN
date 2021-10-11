@@ -1,14 +1,15 @@
 # MATÉRIAS NA CNN - ATUALIZANDO PORTFÓLIO:
-Esse repositório contém 2 projetos: um que raspa a **home** da CNN Brasil + outro código que busca todas as matérias que foram produzidas por mim para o site da CNN. 
+Esse repositório contém 2 projetos: um que raspa a **home** da CNN Brasil e filtra as matérias que foram publicadas com o meu nome + outro código que busca todas as matérias que foram produzidas apenas por mim para o site da CNN. 
 
-**Sobre o projeto que raspa a HOME:**
+ATT: usei as bibliotecasBeautifulSoup e requests para raspar as páginas e o pandas para converter o resultado para o Excel. 
+
+**Sobre o projeto que raspa a HOME da CNN:**
 - O objetivo do código é buscar todas as matérias que estão na home da CNN, ou seja, em destaque no dia. 
 - Foi criado um código que filtra o termo "Layane Serrano" - a ideia é atualizar o meu portfólio diariamente
 
+**Sobre o projeto que raspa as páginas que contém o termo "Layane Serrano":**
 
-**Sobre o projeto que raspa as páginas que contém o termo "Layane Serrano":
-
-Por meio das bibliotecas BeautifulSoup e requests, fiz a raspagem de duas páginas do site da CNN que englobam matérias apenas com o meu nome:
+- O objetivo era raspar do site da CNN todas as matérias que englobam apenas o meu nome. Para isso, encontrei duas páginas:
 
 _Produzido por Layane Serrano, da CNN São Paulo_
 https://www.cnnbrasil.com.br/autor/produzido-por-layane-serrano/pagina/2/
@@ -16,6 +17,4 @@ https://www.cnnbrasil.com.br/autor/produzido-por-layane-serrano/pagina/2/
 _Textos de Layane Serrano_
 https://www.cnnbrasil.com.br/autor/layane-serrano/
 
-
-ATT: para exportar para o Excel, utilizei a biblioteca pandas. 
 
